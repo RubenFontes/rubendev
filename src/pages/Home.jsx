@@ -22,12 +22,12 @@ function Home() {
           onMouseOut={(e) => e.target.style.textDecoration = "underline"}
         >
           <div className="accordion">
-                         <img 
+            <img 
                id="img" 
                src={isContainerVisible ? homeImages.minusIcon : homeImages.plusIcon} 
                alt="toggle"
              /> 
-            Let’s work together
+            Important Links
           </div>
         </button>
         
