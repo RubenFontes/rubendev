@@ -13,7 +13,7 @@ function Home() {
     <div className="myBox">
       <main className="content">
         <h1 className="title">Ruben Fontes</h1>
-        <p>Frontend Developer in João Pessoa - PB</p>
+        <p id='description'>Front-end Developer in João Pessoa (PB)</p>
         
         <button 
           id="btn" 
@@ -27,7 +27,7 @@ function Home() {
                src={isContainerVisible ? homeImages.minusIcon : homeImages.plusIcon} 
                alt="toggle"
              /> 
-            Important links
+            Let’s work together
           </div>
         </button>
         
@@ -40,15 +40,6 @@ function Home() {
           </ul>
         </div>
       </main>
-
-      {/* Dialogflow web-messenger integration */}
-      <df-messenger
-        intent=""
-        chat-title="Talk to me"
-        agent-id="19a428a1-40f9-48bf-ab4e-812782e559cc"
-        chat-icon={homeImages.chatIcon}
-        language-code="pt-BR">
-      </df-messenger>
     </div>
   )
 }

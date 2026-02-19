@@ -5,17 +5,35 @@
   min-height: 100vh;
 }
 
-.portfolio-page svg {
+/* Botão voltar - minimalista */
+.portfolio-back-wrap {
   margin: calc(20vh - 50px) 0 0 5vw;
-  cursor: pointer;
-  color: #0560ff;
-  border-radius: 50%;
-  transition: .4s;
 }
 
-.portfolio-page svg:hover {
-  color: black;
-  transform: rotate(180deg);
+.portfolio-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #0560ff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.portfolio-back:hover {
+  color: #0346c4;
+  opacity: 0.9;
+}
+
+.portfolio-back:focus-visible {
+  outline: 2px solid #0560ff;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.portfolio-back svg {
+  flex-shrink: 0;
 }
 
 .portfolio-page header {
@@ -136,9 +154,12 @@
 
 /* Responsividade */
 @media (max-width: 920px) {
-  .portfolio-page svg {
-    margin: calc(10vh - 50px) 0 0vh 5vw;
-    width: 44px;
+  .portfolio-back-wrap {
+    margin: calc(10vh - 50px) 0 0 5vw;
+  }
+
+  .portfolio-back {
+    font-size: 0.9rem;
   }
 
   .portfolio-page header {

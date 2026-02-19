@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { portfolioImages, homeImages } from '../utils/imageImports'
+import { portfolioImages } from '../utils/imageImports'
 import OptimizedImage from '../components/OptimizedImage'
 import '../styles/Portfolio.css'
 
@@ -39,14 +39,14 @@ function Portfolio() {
       image: portfolioImages.sima,
       link: ""
     },
-    {
+/*     {
       id: 2,
       title: "Moodle PEX",
       description: "Redesign and Front-end for Distance Learning App (UFPB).",
       tech: "Figma | HTML | CSS | JS | PHP",
       image: portfolioImages.mockupPex,
       link: "https://pex.sead.ufpb.br/login/index.php"
-    },
+    }, */
     {
       id: 3,
       title: "Moodle Classes",
@@ -63,13 +63,13 @@ function Portfolio() {
       image: portfolioImages.bayer33,
       link: ""
     },
-    {
+/*     {
       id: 5,
-      title: "React App",
-      description: "Web App that manages an attendance list.",
-      tech: "ReactJS | TypeScript | HTML | CSS | JS",
-      image: portfolioImages.listaPresenca,
-      link: "https://github.com/RubenFontes/react-app"
+      title: "ClinPet",
+      description: "SPA for veterinary clinics",
+      tech: "Angular | TypeScript",
+      image: portfolioImages.clinpet,
+      link: "https://github.com/RubenFontes/clinpet"
     },
     {
       id: 6,
@@ -78,7 +78,7 @@ function Portfolio() {
       tech: "Figma | Adobe XD",
       image: portfolioImages.laboratoriosUfpb,
       link: "https://www.behance.net/gallery/159902271/Labs-UFPB"
-    },
+    }, */
     {
       id: 7,
       title: "Chatbot Dorinha",
@@ -87,11 +87,11 @@ function Portfolio() {
       image: portfolioImages.dorinhaChatbot,
       link: "https://github.com/RubenFontes/dialogflow-messenger-integration"
     },
-    {
+/*     {
       id: 8,
       title: "Todo App",
       description: "Web task manager.",
-      tech: "NodeJS | MySQL | Sequelize | Handlebars | HTML | CSS | JS",
+      tech: "NodeJS | MySQL | Sequelize | Handlebars",
       image: portfolioImages.todoApp,
       link: "https://github.com/RubenFontes/todo-app"
     },
@@ -110,7 +110,7 @@ function Portfolio() {
       tech: "Vue | Node.js | Selenium",
       image: portfolioImages.mockupVue,
       link: "https://github.com/RubenFontes/pulcher-code-challenge"
-    },
+    }, */
     {
       id: 11,
       title: "Advocatta EJ",
@@ -119,14 +119,14 @@ function Portfolio() {
       image: portfolioImages.advocatta,
       link: "https://advocatta.org"
     },
-    {
+/*     {
       id: 12,
       title: "JHR Agro",
       description: "Web design project for JHR Agro farm landing page.",
       tech: "Figma | Adobe XD",
       image: portfolioImages.jhrAgro,
       link: "https://jhragro.com"
-    }
+    }  */
   ]
 
   useEffect(() => {
@@ -161,11 +161,12 @@ function Portfolio() {
 
   return (
     <main className="portfolio-page">
-      <div className="animacao">
-        <Link to="/">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" className="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-            <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+      <div className="animacao portfolio-back-wrap">
+        <Link to="/" className="portfolio-back" aria-label="Voltar ao início">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
           </svg>
+          <span>Voltar</span>
         </Link>
       </div>
     
@@ -209,16 +210,6 @@ function Portfolio() {
           </article>
         ))}
       </section>
-
-      {/* Dialogflow web-messenger integration */}
-      <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-      <df-messenger
-        intent=""
-        chat-title="Talk to me"
-        agent-id="19a428a1-40f9-48bf-ab4e-812782e559cc"
-        chat-icon={homeImages.chatIcon}
-        language-code="pt-BR">
-      </df-messenger>
     </main>
   )
 }

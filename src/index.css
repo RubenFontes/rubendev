@@ -4,6 +4,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif ;
 }
 
 :root {
@@ -29,7 +32,6 @@ html{
 ::-webkit-scrollbar-thumb {
   background: var(--seccundary-color);
   border-radius: 5px;
-
 }
 
 body{
@@ -48,18 +50,17 @@ body{
 
 .title{
   display: inline;
-  padding: 10px;
+  padding: 10px 12px;
   font-weight: 700;
   font-size: 2.2em;
   color: var(--light-color);
   background: var(--main-color);
 }
 
-main p{
-  margin-top: 1.6rem;
-  margin-bottom: 4px;
-  font-size: 1.1rem;
-  font-weight: 400;
+#description{
+  margin: 25px 0 5px 0;
+  font-size: 1.2em;
+  font-weight: 300;
   color: black;
 }
 
@@ -72,11 +73,13 @@ button{
   background-color: var(--light-color);
   color: black;
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif ;
-  font-weight: 400;
-  font-size: 1.1rem;
+  font-weight: 500;
+  font-size: .85em;
+  letter-spacing: .04em;
   cursor: pointer;
   text-decoration: underline;
   border: none;
+  text-transform: uppercase;
 }
 
 #img{
@@ -103,7 +106,6 @@ ul{
 
 ul li{
   list-style-type: none;
-
 }
 
 a{
@@ -125,26 +127,158 @@ a:hover{
   .title{
     font-size: 2rem;
   }
-  main p{
-    font-size: 1rem;
-    margin-top: 1.4rem;
-    margin-bottom: 6px;
-  }
-  button{
-    font-size: 1rem;
-  }
 }
 
-df-messenger {
-  --df-messenger-bot-message: white; /* Cor do balão para mensagens do agente */
-  --df-messenger-button-titlebar-color: var(--main-color); /*Cor do botão flutuante e da barra de título da caixa de diálogo do chat.*/
-  --df-messenger-button-titlebar-font-color: var(--light-color); /*Cor da fonte do título na barra de título.*/
-  --df-messenger-chat-background-color: var(--light-color); /*Cor do fundo.*/
-  --df-messenger-font-color: black; /*Cor da fonte para mensagens.*/
-  --df-messenger-input-box-color: var(--light-color); /*Cor do segundo plano da caixa de entrada de texto.*/
-  --df-messenger-input-font-color: #131418; /*Cor da fonte da caixa de entrada de texto.*/
-  --df-messenger-input-placeholder-font-color: #131418; /*Cor da fonte do texto do marcador na caixa de entrada de texto.*/
-  --df-messenger-minimized-chat-close-icon-color: var(--light-color); /*Cor do ícone de fechamento na visualização de chat fechada.*/
-  --df-messenger-send-icon: var(--main-color); /*Cor do ícone de envio na caixa de entrada de texto.*/
-  --df-messenger-user-message: #E4E4E7; /*Cor do segundo plano do balão para mensagens do usuário.*/
+.gemini-chat-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--light-color);
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out,
+    background-color 0.15s ease-out;
+  text-decoration: none;
+}
+
+.gemini-chat-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+  background-color: #0046c0;
+}
+
+.gemini-chat-window {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  width: 340px;
+  max-height: 520px;
+  background-color: var(--light-color);
+  color: #111827;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.gemini-chat-header {
+  padding: 12px 16px;
+  background: linear-gradient(120deg, var(--main-color), #00b4ff);
+  color: var(--light-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gemini-chat-header h2 {
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.gemini-chat-header span {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.gemini-chat-messages {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+  background: radial-gradient(circle at top left, #e5edff 0, #f8fafc 55%);
+}
+
+.gemini-chat-message {
+  max-width: 80%;
+  padding: 8px 10px;
+  border-radius: 14px;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.gemini-chat-message.user {
+  margin-left: auto;
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.gemini-chat-message.model {
+  margin-right: auto;
+  background-color: #ffffff;
+  color: #020617;
+  box-shadow: 0 2px 8px rgba(148, 163, 184, 0.45);
+}
+
+.gemini-chat-input-row {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  border-top: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+}
+
+.gemini-chat-input-row input {
+  flex: 1;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.gemini-chat-input-row input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.25);
+}
+
+.gemini-chat-input-row button {
+  border-radius: 999px;
+  border: none;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background-color: var(--main-color);
+  color: var(--light-color);
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.gemini-chat-window a,
+.gemini-chat-window a:hover,
+.gemini-chat-window a:focus {
+  text-decoration: none;
+}
+
+.gemini-chat-input-row button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .gemini-chat-window {
+    right: 12px;
+    left: 12px;
+    bottom: 84px;
+    width: auto;
+    max-height: 70vh;
+  }
+
+  .gemini-chat-button {
+    right: 16px;
+    bottom: 16px;
+  }
 }
