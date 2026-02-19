@@ -42,10 +42,10 @@ body{
 }
 
 .content{
-  left: 42%;
+  left: 40%;
   top: 50%;
   position: absolute;
-  transform: translate(-50%, -42%);
+  transform: translate(-50%, -40%);
 }
 
 .title{
@@ -59,8 +59,9 @@ body{
 
 #description{
   margin: 25px 0 5px 0;
-  font-size: 1.2em;
-  font-weight: 300;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 400;
   color: black;
 }
 
