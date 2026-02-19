@@ -29,26 +29,18 @@ function Portfolio() {
       description: "Production scenario optimizer for Bayer.",
       tech: "React | TypeScript | Next.js | Nest | AWS",
       image: portfolioImages.mockupMinerva,
-      link: ""
+      link: "https://github.com/RubenFontes/storybook-minerva"
     },
     {
       id: 1,
       title: "Sima Engenharia",
-      description: "Low code app for equipment management.",
+      description: "Low code app for internal equipment management.",
       tech: "Figma | Power Apps | Power Fx (lang)",
       image: portfolioImages.sima,
       link: ""
     },
-/*     {
-      id: 2,
-      title: "Moodle PEX",
-      description: "Redesign and Front-end for Distance Learning App (UFPB).",
-      tech: "Figma | HTML | CSS | JS | PHP",
-      image: portfolioImages.mockupPex,
-      link: "https://pex.sead.ufpb.br/login/index.php"
-    }, */
     {
-      id: 3,
+      id: 2,
       title: "Moodle Classes",
       description: "Redesign and Front-end for Distance Learning App (UFPB).",
       tech: "Figma | HTML | CSS | JS | PHP",
@@ -56,77 +48,29 @@ function Portfolio() {
       link: "https://classes.sead.ufpb.br/login/index.php"
     },
     {
-      id: 4,
+      id: 3,
       title: "ONE alpha",
-      description: "Management system for Bayer.",
+      description: "Corporate management system for Bayer.",
       tech: "JS | jQuery | AJAX | Bootstrap | Sharepoint",
       image: portfolioImages.bayer33,
       link: ""
     },
-/*     {
-      id: 5,
-      title: "ClinPet",
-      description: "SPA for veterinary clinics",
-      tech: "Angular | TypeScript",
-      image: portfolioImages.clinpet,
-      link: "https://github.com/RubenFontes/clinpet"
-    },
     {
-      id: 6,
-      title: "UFPB Labs",
-      description: "Web design project for UFPB laboratory pages.",
-      tech: "Figma | Adobe XD",
-      image: portfolioImages.laboratoriosUfpb,
-      link: "https://www.behance.net/gallery/159902271/Labs-UFPB"
-    }, */
-    {
-      id: 7,
+      id: 4,
       title: "Chatbot Dorinha",
       description: "EaD support chatbot (UFPB).",
       tech: "NodeJS | ExpressJS | DialogFlow | HTML | CSS",
       image: portfolioImages.dorinhaChatbot,
       link: "https://github.com/RubenFontes/dialogflow-messenger-integration"
     },
-/*     {
-      id: 8,
-      title: "Todo App",
-      description: "Web task manager.",
-      tech: "NodeJS | MySQL | Sequelize | Handlebars",
-      image: portfolioImages.todoApp,
-      link: "https://github.com/RubenFontes/todo-app"
-    },
     {
-      id: 9,
-      title: "ArtStage",
-      description: "Website for publishing artistic works.",
-      tech: "Figma | WordPress | Elementor | PHP | MySQL",
-      image: portfolioImages.artStage,
-      link: "https://github.com/RubenFontes/ArtStage"
-    },
-    {
-      id: 10,
-      title: "Pedido Expresso",
-      description: "SPA with data persistence.",
-      tech: "Vue | Node.js | Selenium",
-      image: portfolioImages.mockupVue,
-      link: "https://github.com/RubenFontes/pulcher-code-challenge"
-    }, */
-    {
-      id: 11,
+      id: 5,
       title: "Advocatta EJ",
       description: "Web design project for the junior company Advocatta.",
       tech: "Figma | Adobe XD",
       image: portfolioImages.advocatta,
       link: "https://advocatta.org"
-    },
-/*     {
-      id: 12,
-      title: "JHR Agro",
-      description: "Web design project for JHR Agro farm landing page.",
-      tech: "Figma | Adobe XD",
-      image: portfolioImages.jhrAgro,
-      link: "https://jhragro.com"
-    }  */
+    }
   ]
 
   useEffect(() => {
